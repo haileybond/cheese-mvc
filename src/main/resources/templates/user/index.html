@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container body-content">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${users} and ${users.size()}">No registered Users. <a href="user/add">Register for an Account.</a></p>
+
+<tr th:each="user : ${users}">
+    <td th:text="${user.username}"></td>
+</tr>
+
+<p><a href="user/add">Register</a></p>
+
+
+</body>
+</html>

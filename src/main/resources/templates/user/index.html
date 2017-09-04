@@ -10,9 +10,10 @@
 
 <p th:unless="${users} and ${users.size()}">No registered Users. <a href="user/add">Register for an Account.</a></p>
 
-<tr th:each="user : ${users}">
-    <td th:text="${user.username}"></td>
-</tr>
+<div th:each="user : ${users}" >
+    <tr th:text="${user.username}" >
+    </tr>
+</div>
 
 <p><a href="user/add">Register</a></p>
 
